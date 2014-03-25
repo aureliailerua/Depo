@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Pragprog Books Online Store</title>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -26,6 +27,11 @@
 			</ul>
 		</div>
 	<div id="main">
+		
+		<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+		<%= render @cart %>
+		<% end %>
+
 	<%= yield %>
 	</div>
 	</div>
