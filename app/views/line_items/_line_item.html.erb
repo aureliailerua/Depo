@@ -1,0 +1,8 @@
+<!-- Rails automatically prepends an underscore to the partial name when looking for the file. That means we need to name our partial _line_item.html.erb and place it in the app/views/line_items directory.
+ -->
+
+<tr>
+	<td><%= line_item.quantity %>&times;</td>
+	<td><%= line_item.product.title %></td>
+	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+</tr>

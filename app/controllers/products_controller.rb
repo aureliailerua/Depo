@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+      # as my store path doesnt work now, i include this here
+      include CurrentCart
+      before_action :set_cart 
 
   # GET /products
   # GET /products.json
