@@ -5,6 +5,11 @@ Depo::Application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  
+  # added according to p.178. Email will not be delivered; instead, it 
+  #will be appended to an array.
+  # accessible via attribute ActionMailer::Base.deliveries)
+  config.action_mailer.delivery_method = :test
 
   # Do not eager load code on boot.
   config.eager_load = false
